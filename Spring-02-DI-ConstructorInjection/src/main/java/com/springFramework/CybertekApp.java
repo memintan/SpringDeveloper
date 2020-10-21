@@ -1,3 +1,5 @@
+package com.springFramework;
+
 import com.springFramework.interfaces.Course;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
