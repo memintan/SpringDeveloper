@@ -1,7 +1,7 @@
-package services;
+package com.springFramework.services;
 
 
-import interfaces.ExtraSessions;
+import com.springFramework.interfaces.ExtraSessions;
 
 public class OfficeHours implements ExtraSessions {
     @Override

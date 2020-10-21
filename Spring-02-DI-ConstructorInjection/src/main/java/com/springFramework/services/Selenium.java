@@ -1,6 +1,6 @@
-package services;
+package com.springFramework.services;
 
-import interfaces.Course;
+import com.springFramework.interfaces.Course;
 
 public class Selenium implements Course {
     @Override
