@@ -3,7 +3,7 @@ package com.springFramework.services;
 import com.springFramework.interfaces.Course;
 import lombok.Data;
 
-@Data
+
 public class Java implements Course {
     @Override
     public void getTeachingHours() {
