@@ -1,6 +1,7 @@
 package com.springFramework.services;
 
 import com.springFramework.interfaces.Course;
+import com.springFramework.interfaces.ExtraSessions;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -11,7 +12,7 @@ public class Java implements Course {
 
     //Field Injection
     @Autowired
-    private OfficeHours officeHours;
+    private ExtraSessions extraSessions;
 /*
     //Constructor injection
     @Autowired
@@ -33,6 +34,6 @@ public class Java implements Course {
 
     @Override
     public void getTeachingHours() {
-        System.out.println("Weekly teaching hours: "+(30+officeHours.getHours()));
+        System.out.println("Weekly teaching hours: "+(30+extraSessions.getHours()));
     }
 }
