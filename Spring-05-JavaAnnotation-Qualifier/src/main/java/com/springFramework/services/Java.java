@@ -13,7 +13,7 @@ public class Java implements Course {
 //    @Qualifier("officeHours")
     private ExtraSessions extraSessions;
 
-    public Java(@Qualifier("officeHours")ExtraSessions extraSessions) {
+    public Java(@Qualifier("mockInterviewHours")ExtraSessions extraSessions) {
         this.extraSessions = extraSessions;
     }
 
