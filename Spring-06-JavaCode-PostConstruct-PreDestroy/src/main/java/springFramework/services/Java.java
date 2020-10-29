@@ -25,6 +25,6 @@ public class Java implements Course {
 
     @PreDestroy
     public void preDestroy(){
-        System.out.println("Executing pre construct");
+        System.out.println("Executing pre destroy");
     }
 }
