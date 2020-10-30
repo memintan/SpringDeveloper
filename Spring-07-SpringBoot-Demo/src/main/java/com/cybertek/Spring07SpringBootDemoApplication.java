@@ -10,7 +10,7 @@ public class Spring07SpringBootDemoApplication {
 
 	public static void main(String[] args) {
 
-		ApplicationContext container = SpringApplication.run(Spring07SpringBootDemoApplication.class, args);
+		ApplicationContext container = SpringApplication.run(Spring07SpringBootDemoApplication.class, args); //creates containers and all beans
 		Course course = container.getBean("java", Course.class);
 
 		System.out.println("course.getTeachingHours() = " + course.getTeachingHours());
