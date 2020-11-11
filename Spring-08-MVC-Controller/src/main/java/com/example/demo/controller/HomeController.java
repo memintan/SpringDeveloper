@@ -48,7 +48,7 @@ public class HomeController {
     }
 
     @GetMapping(value ="/course")
-    public String requestParamEx2(@RequestParam(value ="name", required = false, defaultValue = "Cybertekå") String course){
+    public String requestParamEx2(@RequestParam(value ="name", required = false, defaultValue = "Cybertek") String course){
         System.out.println("name is => "+course);
         return "home";
     }
