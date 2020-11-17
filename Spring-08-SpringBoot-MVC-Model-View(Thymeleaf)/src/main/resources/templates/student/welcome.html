@@ -15,6 +15,32 @@
     <h1 th:text="${numbers.get(0)}" ></h1>
     <h2 th:text="${birthday}" ></h2>
     <h1 th:text="${'Hello '+ name}" ></h1>
+    <h3 th:text="${student.getFirstname()}" ></h3>
+    <h1 th:text="${student.lastname}" ></h1>
+    <h1 th:text="${student}" ></h1>
+
+    <!--Link-->
+    <a th:href="@{https://cybertekschool.com}">Cybertek</a>
+    <a th:href="@{/student/register}">Register</a>
+
+    <!--Adding parameters to link-->
+    <a th:href="@{/student/welcome(id=3)}">Link2</a>
+    <a th:href="@{/student/welcome(id=${student.id})}">Link3</a>
+
+    <!--Iteration-->
+    <ul>
+        <li th:each="number : ${numbers}" th:text="${number}" ></li>
+    </ul>
+
+    <!--Fragment-->
+    <div th:replace="fragments/footer :: ozzy"></div>
+
+
+
+
+
+
+
 
 </body>
 </html>
