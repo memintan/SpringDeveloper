@@ -5,8 +5,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 @Controller
@@ -31,6 +33,10 @@ public class StudentController {
         numbers.add(5);
         numbers.add(7);
         model.addAttribute("numbers", numbers);
+
+        //print your birthday
+        LocalDate birthday = LocalDate.now().minusYears(37);
+        model.addAttribute("birthday", birthday);
 
 
         return "student/welcome";
