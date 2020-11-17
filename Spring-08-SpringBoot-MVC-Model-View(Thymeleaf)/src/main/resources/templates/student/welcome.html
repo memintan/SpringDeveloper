@@ -23,6 +23,23 @@
     <a th:href="@{https://cybertekschool.com}">IAHouston</a>
     <a th:href="@{/student/register}">Register</a>
 
+    <!--Adding parameters to link-->
+    <a th:href="@{/student/welcome(id=3)}">Link2</a>
+    <a th:href="@{/student/welcome(id=${student.id})}">Link3</a>
+
+    <!--Iteration-->
+    <ul>
+        <li th:each="number : ${numbers}" th:text="${number}"></li>
+    </ul>
+
+    <!--Fragment-->
+    <div th:replace="fragments/footer :: Mehmet"></div>
+
+
+
+
+
+
 
 
 
