@@ -9,7 +9,7 @@ import lombok.*;
 @ToString
 public class Employee {
     private String firstName;
-    private String lastname;
+    private String lastName;
     private String birthday;
     private String email;
     private String password;
@@ -18,6 +18,7 @@ public class Employee {
     private String city;
     private String state;
     private String zipCode;
+
 
 
 }
