@@ -1,5 +1,6 @@
 package com.springboot.controller;
 
+
 import com.springboot.dataGenerator.DataGenerator;
 import com.springboot.model.Employee;
 import org.springframework.stereotype.Controller;
@@ -19,18 +20,19 @@ public class EmployeeController {
     @GetMapping("/register")
     public String employeeCreate(Model model){
 
-        model.addAttribute("employee", new Employee());
-        model.addAttribute("getStateList", DataGenerator.getStateList());
+        model.addAttribute("employee",new Employee());
+        model.addAttribute("stateList", DataGenerator.getStateList());
 
-        return"employee/employee-create";
+        return "employee/employee-create";
     }
 
     @PostMapping("/list")
     public String employeeList(@ModelAttribute("employee") Employee employee, Model model){
 
         model.addAttribute("employeeList", Arrays.asList(employee));
+
         int birthYear = LocalDate.parse(employee.getBirthday()).getYear();
-        model.addAttribute("age", LocalDate.now().getYear() - birthYear);
+        model.addAttribute("age",LocalDate.now().getYear() - birthYear);
 
         return "employee/employee-list";
     }

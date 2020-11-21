@@ -4,7 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class DataGenerator {
-    public static List<String> getStateList() {
+
+    public static List<String> getStateList(){
 
         List<String> stateList = Arrays.asList(
                 "Alaska",
@@ -59,6 +60,6 @@ public class DataGenerator {
                 "Wyoming");
 
         return stateList;
-    }
 
+    }
 }
