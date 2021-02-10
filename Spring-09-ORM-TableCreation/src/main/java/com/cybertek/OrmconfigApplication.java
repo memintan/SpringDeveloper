@@ -20,7 +20,7 @@ public class OrmconfigApplication {
 	}
 
 	@PostConstruct
-	public void dataUnit(){
+	public void dataInit(){
 		Car c1 = new Car("BMW","M5");
 		Car c2 = new Car("Kia","Sorento");
 		Car c3 = new Car("Mercedes","S500");
