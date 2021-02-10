@@ -1,16 +1,23 @@
 package com.cybertek.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "students")
 public class Student {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "studentFirstName")
     private String firstName; //first_name
+    @Column(name = "studentLastName")
     private String LastName;
+    @Column(name = "studentEmailAddres")
     private String email;
+
+    @Transient
+    private String city;
 
 }
