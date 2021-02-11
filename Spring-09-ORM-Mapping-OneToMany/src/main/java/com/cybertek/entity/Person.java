@@ -23,7 +23,7 @@ public class Person {
 //    @OneToMany(mappedBy = "person")
 //    private List<Address> addresses;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name="person_id")
     private List<Address> addresses;
 
