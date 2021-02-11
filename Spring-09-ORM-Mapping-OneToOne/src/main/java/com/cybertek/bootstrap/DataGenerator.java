@@ -20,15 +20,13 @@ public class DataGenerator implements CommandLineRunner {
 
     @Autowired
     EmployeeRepository employeeRepository;
-    //DepartmentRepository departmentRepository;
-
-
 
     @Override
     public void run(String... args) throws Exception {
 
         List<Employee> employeeList = new ArrayList<>();
         List<Department> departmentList = new ArrayList<>();
+
 
         Employee e1 = new Employee("Berrie", "Manueau", "bmanueau0@dion.ne.jp", LocalDate.of(2006,04,20), Gender.F,154864);
         Employee e2 = new Employee("Aeriell", "McNee", "amcnee1@google.es", LocalDate.of(2009,01,26), Gender.F,56752);
@@ -48,6 +46,7 @@ public class DataGenerator implements CommandLineRunner {
         Region r4 = new Region("Quebec'","Canada");
         Region r5 = new Region("Central","Asia");
 
+
         e1.setDepartment(d1);
         e2.setDepartment(d2);
         e3.setDepartment(d3);
@@ -65,7 +64,12 @@ public class DataGenerator implements CommandLineRunner {
         departmentList.addAll(Arrays.asList(d1,d2,d3,d4,d5));
 
         employeeRepository.saveAll(employeeList);
-      //  departmentRepository.saveAll(departmentList);
+
+
+
+
+
+
 
 
 

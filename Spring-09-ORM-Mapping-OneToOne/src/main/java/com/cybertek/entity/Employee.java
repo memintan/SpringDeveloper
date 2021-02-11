@@ -32,7 +32,7 @@ public class Employee extends BaseEntity {
     private Department department;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "region_id")
+    @JoinColumn(name="region_id")
     private Region region;
 
     public Employee(String firstName, String lastName, String email, LocalDate hireDate, Gender gender, int salary) {

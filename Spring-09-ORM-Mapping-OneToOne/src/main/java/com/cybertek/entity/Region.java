@@ -9,10 +9,10 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "regions")
 @Getter
 @Setter
 @NoArgsConstructor
+@Table(name = "regions")
 public class Region extends BaseEntity {
 
     private String region;
