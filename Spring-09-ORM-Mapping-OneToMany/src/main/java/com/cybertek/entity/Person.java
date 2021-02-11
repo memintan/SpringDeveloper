@@ -20,7 +20,7 @@ public class Person {
     private String firstName;
     private String lastName;
 
-    @OneToMany(mappedBy = "person", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "person")
     private List<Address> addresses;
 
     //Case-1

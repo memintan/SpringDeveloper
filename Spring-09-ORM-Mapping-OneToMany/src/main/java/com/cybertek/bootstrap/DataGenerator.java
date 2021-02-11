@@ -30,7 +30,7 @@ public class DataGenerator implements CommandLineRunner {
         Address a3 = new Address("Peek", "77449");
 
        // p1.setAddresses(Arrays.asList(a1,a2)); //case 1
-       // personRepository.save(p1);            //Case-1
+        personRepository.save(p2);            //Case-1
 
 
         a1.setPerson(p2);
