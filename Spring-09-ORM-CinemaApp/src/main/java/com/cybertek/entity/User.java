@@ -1,3 +1,4 @@
+
 package com.cybertek.entity;
 
 import lombok.Getter;
@@ -11,13 +12,13 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @Table(name = "user_account")
-public class User extends BaseEntity{
+public class User extends BaseEntity {
 
     private String email;
     private String password;
     private String username;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY,cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     @JoinColumn(name = "account_details_id")
     private Account account;
 
