@@ -1,5 +1,6 @@
 package com.cybertek;
 
+import com.cybertek.repository.DepartmentRepository;
 import com.cybertek.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -12,6 +13,8 @@ public class JpqlApplication {
 
 	@Autowired
 	EmployeeRepository employeeRepository;
+	@Autowired
+	DepartmentRepository departmentRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(JpqlApplication.class, args);
@@ -19,15 +22,19 @@ public class JpqlApplication {
 
 	@PostConstruct
 	public void testEmployee(){
-		System.out.println("employeeRepository.getEmployeeDetail() => " + employeeRepository.getEmployeeDetail());
-		System.out.println("employeeRepository.getEmployeeSalary() => " + employeeRepository.getEmployeeSalary());
-		System.out.println("employeeRepository.getEmployeeByEmail() => " + employeeRepository.getEmployeeByEmail("myakovlivf@ucsd.edu").get());
-		//System.out.println("employeeRepository.getEmployeeByEmailAndSalary() => " + employeeRepository.getEmployeeByEmailAndSalary());
 
+		System.out.println(employeeRepository.getEmployeeDetail());
+		System.out.println(employeeRepository.getEmployeeSalary());
+		System.out.println(employeeRepository.getEmployeeByEmail("myakovlivf@ucsd.edu").get());
 		employeeRepository.updateEmployeeJPQL(1);
 
-		employeeRepository.retrieveEmployeeSalaryGreaterThan(100000);
+		System.out.println(employeeRepository.retrieveEmployeeSalaryGreaterThan(100000));
+
+		System.out.println(departmentRepository.findOzzyDepartment("Kids"));
+
+		System.out.println(departmentRepository.countAllDepartments());
 	}
-
-
 }
+
+
+
