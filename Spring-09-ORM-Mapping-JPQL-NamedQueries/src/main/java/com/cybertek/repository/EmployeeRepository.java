@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
@@ -16,4 +17,12 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     @Query("SELECT e.salary FROM Employee e WHERE e.email='dtrail8@tamu.edu'")
     Integer getEmployeeSalary();
+
+    //single bind parameter
+    @Query("SELECT e FROM Employee e WHERE e.email=?1")
+    Optional<Employee> getEmployeeByEmail(String email);
+
+    //multiple bind parameter
+    @Query("SELECT e FROM Employee e WHERE e.email=?1 AND e.salary=?2")
+    Optional<Employee> getEmployeeByEmailAndSalary(String email, Integer salary);
 }
