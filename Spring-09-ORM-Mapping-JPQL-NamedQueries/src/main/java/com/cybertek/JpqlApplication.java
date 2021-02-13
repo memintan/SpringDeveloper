@@ -23,6 +23,8 @@ public class JpqlApplication {
 		System.out.println("employeeRepository.getEmployeeSalary() => " + employeeRepository.getEmployeeSalary());
 		System.out.println("employeeRepository.getEmployeeByEmail() => " + employeeRepository.getEmployeeByEmail("myakovlivf@ucsd.edu").get());
 		//System.out.println("employeeRepository.getEmployeeByEmailAndSalary() => " + employeeRepository.getEmployeeByEmailAndSalary());
+
+		employeeRepository.updateEmployeeJPQL(1);
 	}
 
 
