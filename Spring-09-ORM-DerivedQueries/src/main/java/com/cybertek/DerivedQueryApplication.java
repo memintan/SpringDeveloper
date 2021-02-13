@@ -27,8 +27,10 @@ public class DerivedQueryApplication {
 	public void testRegions(){
 		System.out.println("---------Regions start------------");
 		System.out.println("findByCountry => " + regionRepository.findByCountry("Canada"));
-
-
+		System.out.println("findDistinctByCountry => " + regionRepository.findDistinctByCountry("Canada"));
+		System.out.println("findByCountryContaining => " + regionRepository.findByCountryContaining("United"));
+		System.out.println("findByCountryContainingOrderByCountry => " + regionRepository.findByCountryContainingOrderByCountry("Asia"));
+		System.out.println("findTop2ByCountry => " + regionRepository.findTop2ByCountry("Canada"));
 		System.out.println("---------Regions End------------");
 
 	}
