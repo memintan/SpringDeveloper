@@ -19,6 +19,7 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
+
         List<GrantedAuthority> authorityList = new ArrayList<>();
 
         //Extract list of permissions
@@ -32,7 +33,9 @@ public class UserPrincipal implements UserDetails {
             GrantedAuthority authority = new SimpleGrantedAuthority("ROLE_" +r);
             authorityList.add(authority);
         });
+
         return authorityList;
+
     }
 
     @Override

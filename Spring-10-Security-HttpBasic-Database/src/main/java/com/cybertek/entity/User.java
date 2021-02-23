@@ -13,18 +13,17 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private  Long id;
 
     private String username;
     private String password;
     private int active;
-    private String roles; //ADMIN,MANAGER
+    private String roles;
     private String permissions;
 
-    public User(String username, String password, String roles, String permissions) {
+    public User(String username, String password,String roles, String permissions) {
         this.username = username;
         this.password = password;
         this.active = 1;
@@ -33,16 +32,17 @@ public class User {
     }
 
     public List<String> getRoleList(){
-        if (this.roles.length()>0){
+        if(this.roles.length()>0){
             return Arrays.asList(this.roles.split(","));
         }
         return new ArrayList<>();
     }
 
     public List<String> getPermissionList(){
-        if (this.permissions.length()>0){
+        if(this.permissions.length()>0){
             return Arrays.asList(this.permissions.split(","));
         }
         return new ArrayList<>();
+
     }
 }

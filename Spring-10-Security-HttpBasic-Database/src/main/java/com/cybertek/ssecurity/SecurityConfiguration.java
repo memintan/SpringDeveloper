@@ -15,22 +15,22 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.
-                authorizeRequests().//request should be authorized
-                antMatchers("index.html").permitAll().
-                antMatchers("/profile/**").authenticated().
-                antMatchers("/admin/**").hasRole("ADMIN").
-                antMatchers("/management/**").hasAnyRole("ADMIN","MANAGER").
-                anyRequest().authenticated().//incoming request be authenticated
-                and().
-                httpBasic(); //perform basic http authentication
+        http
+                .authorizeRequests() //request should be authorized
+                .antMatchers("index.html").permitAll()
+                .antMatchers("/profile/**").authenticated()
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/management/**").hasAnyRole("ADMIN","MANAGER")
+                .and()
+                .httpBasic(); //perform basic http authentication
     }
-
 
 
     @Bean
     PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder() ;
+
+        return new BCryptPasswordEncoder();
     }
+
 
 }
