@@ -31,7 +31,7 @@ public class DataGeneration implements CommandLineRunner {
 
         //Create users
         User employee = new User("mehmet",passwordEncoder.encode("mehmet123"),"USER","");
-        User admin = new User("admin", passwordEncoder.encode("admin123"), "ADMIN", "ACCESS_TEST1, ACCESS_TEST1");
+        User admin = new User("admin", passwordEncoder.encode("admin123"), "ADMIN", "ACCESS_TEST1, ACCESS_TEST2");
         User amnager = new User("manager", passwordEncoder.encode("manager123"), "MANAGER", "ACCESS_TEST1");
 
         List<User> user = Arrays.asList(employee,admin,amnager);
