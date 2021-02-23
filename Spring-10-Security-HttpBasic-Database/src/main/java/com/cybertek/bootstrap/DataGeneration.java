@@ -39,9 +39,6 @@ public class DataGeneration implements CommandLineRunner {
         userRepository.saveAll(user);
     }
 
-    @Bean
-    PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
-    }
+
 
 }
