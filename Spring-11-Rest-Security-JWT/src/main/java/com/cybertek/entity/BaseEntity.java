@@ -50,5 +50,4 @@ public class BaseEntity {
         this.updatedDate = new Date();
         this.updateUserId=1;
     }
-
 }
