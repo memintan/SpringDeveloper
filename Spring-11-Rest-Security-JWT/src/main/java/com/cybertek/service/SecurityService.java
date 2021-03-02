@@ -1,10 +1,15 @@
 package com.cybertek.service;
 
 import com.cybertek.entity.User;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class SecurityService implements UserDetailsService {
@@ -29,5 +34,11 @@ public class SecurityService implements UserDetailsService {
     public User loadUser(String value){
         boolean isEmail = value.contains("@");
         return isEmail ? userService.readByEmail(value) : userService.readByUsername(value);
+    }
+
+    private List<GrantedAuthority> listAuthorities(User user){
+        List<GrantedAuthority> grantedAuthorityList = new ArrayList<>();
+        grantedAuthorityList.add(new SimpleGrantedAuthority(user.getRole().name()));
+        return  grantedAuthorityList;
     }
 }
