@@ -26,7 +26,6 @@ public class SecurityFilter extends OncePerRequestFilter {
         this.jwtUtil = jwtUtil;
         this.securityService = securityService;
     }
-
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest,
                                     HttpServletResponse httpServletResponse,
@@ -41,7 +40,6 @@ public class SecurityFilter extends OncePerRequestFilter {
             username = jwtUtil.extractUsername(token);
         }
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-
             UserDetails userDetails = securityService.loadUserByUsername(username);
 
             if (jwtUtil.validateToken(token, userDetails) && checkIfUserIsValid(username)) {
