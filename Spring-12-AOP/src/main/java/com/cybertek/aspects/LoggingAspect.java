@@ -14,13 +14,25 @@ public class LoggingAspect {
 
     Logger logger = LoggerFactory.getLogger(ProductController.class);
 
-    @Pointcut("execution(* com.cybertek.controller.ProductController.*(..))")
-    public void pointcut(){}
+//    @Pointcut("execution(* com.cybertek.controller.ProductController.*(..))")
+//    public void pointcut(){}
+//
+//    @Before("pointcut()")
+//    public void log(){
+//        logger.info("------------------");
+//    }
+//
+//    @Before("execution(* com.cybertek.controller.ProductController.*(..))")
+//    public void beforeAdvice(){
+//        logger.info("------------------");
+//    }
 
-    @Before("pointcut()")
-    public void log(){
-        logger.info("------------------");
-    }
+    //    execution
+    @Pointcut("execution(* com.cybertek.controller.ProductController.up*(..))")
+    private void anyUpdateOperation(){}
+
+
+
 
 
 }
