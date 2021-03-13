@@ -38,10 +38,12 @@ class UnitTestingImplTest {
     @Test
     void calculateSumUsingDataService_Mock(){
 
-        when(dataRepository.findAll()).thenReturn(new int[]{1,2,3});
+        when(dataRepository.findAll()).thenReturn(new int[]{1,2,3}).thenReturn(new int[]{5,5,5});
 
         int actual = unitTesting.calculateSumUsingDataService();
+        int actual2 = unitTesting.calculateSumUsingDataService();
 
         assertEquals(6,actual);
+        assertEquals(15,actual2);
     }
 }
